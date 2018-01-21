@@ -51,6 +51,7 @@ def build_calendar(time_entries):
     ical = str(calendar.to_ical()).replace("\\r\\n", "\n").strip("b'").strip("'")
     return ical
 
+
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Saves Toggl time entries to iCal file')
