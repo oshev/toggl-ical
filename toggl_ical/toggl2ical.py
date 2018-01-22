@@ -10,8 +10,8 @@ TOGGL_TIME_FORMAT = "%Y-%m-%dT%H:%M:00Z"
 
 
 def get_entries(api_token, days):
-    end_date = datetime.now().strftime(TOGGL_TIME_FORMAT.format(TOGGL_TIME_FORMAT))
-    start_date = (datetime.now() - timedelta(days=int(days))).strftime(TOGGL_TIME_FORMAT.format(TOGGL_TIME_FORMAT))
+    end_date = datetime.now().strftime(TOGGL_TIME_FORMAT)
+    start_date = (datetime.now() - timedelta(days=int(days))).strftime(TOGGL_TIME_FORMAT)
 
     response = requests.get(TOGGL_URL_TEMPLATE.format(start_date, end_date), auth=(api_token, 'api_token'))
     if response.status_code == 200:
